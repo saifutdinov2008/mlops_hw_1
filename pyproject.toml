@@ -1,0 +1,29 @@
+[project]
+name = "mlops-hw-1"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Yusuf Saifutdinov", email = "ysaifutdinov@gmail.com"}
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.10.19"
+gensim = "4.3.3"
+pandas = "2.2.0"
+scikit-learn = "1.5.0"
+numpy = "1.26.0"
+pyarrow = "^22.0.0"
+tqdm = "^4.67.1"
+pymystem3 = "^0.2.0"
+nltk = "^3.9.2"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.1.0"
+
+[tool.poetry.scripts]
+train-doc2vec = "src.train_model:main"
+infer-doc2vec = "src.infer:main"
+
+[tool.poetry]
+package-mode = false
