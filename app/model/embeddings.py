@@ -1,6 +1,7 @@
 import pandas as pd
 
 def get_product_vector(model, products_mapper, product_name: str):
+    
     """Get vector embedding of a product by name."""
     product_id = products_mapper[product_name.lower()]
     return model.dv.vectors[product_id], product_id
