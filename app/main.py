@@ -8,7 +8,7 @@ from model.train_model import train_model
 from model.optuna_tuning import run_optuna_tuning
 from utils.utils import validate_model, plot_cosine_heatmap
 from utils.wrapper import Doc2VecWrapper
-from deployment_mlflow import HandleModel  # import your class
+from deployment_mlflow import HandleModel  
 
 warnings.filterwarnings('ignore')
 nltk.download('stopwords')
@@ -60,7 +60,7 @@ if __name__ == "__main__":
         )
 
         # Use HandleModel to set description, alias, and tag
-        handle_model = HandleModel(model_name="Doc2VecModel", version=1)
+        handle_model = HandleModel(model_name="Doc2VecModel", version=5)
         handle_model.update_meta(description="Final Doc2Vec model trained on Amazon dataset using Optuna hyperparameters")
         handle_model.assign_alias(alias="staging")
         handle_model.tag_model(key="env", value="staging")

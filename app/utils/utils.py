@@ -5,7 +5,7 @@ import numpy as np
 import mlflow
 
 
-def validate_model(model,):
+def validate_model(model):
 
     """Simple validation: mean cosine similarity among vectors."""
     
@@ -13,8 +13,6 @@ def validate_model(model,):
     cos_sim = cosine_similarity(vectors)
     avg_sim = np.mean(cos_sim)
     return avg_sim
-
-
 
 def plot_cosine_heatmap(model, save_path="cosine_heatmap.png"):
     """Plot heatmap of cosine similarity between vectors."""

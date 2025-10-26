@@ -1,10 +1,9 @@
 import pandas as pd
 
-def get_product_vector(model, products_mapper, product_name: str):
+def get_product_embeddings(model, products_mapper, product_id: int):
     
     """Get vector embedding of a product by name."""
-    product_id = products_mapper[product_name.lower()]
-    return model.dv.vectors[product_id], product_id
+    return model.dv.vectors[product_id]
 
 def get_similar_products(model, product_vector, df, topn=20):
     """
